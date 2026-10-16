@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel — Rizwan AI Bot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark small">R</span><span>Rizwan <b>AI Bot</b></span></a>
+      <div class="nav-label">WORKSPACE</div>
+      <a class="nav-item active" href="#overview">▦ <span>Overview</span></a>
+      <a class="nav-item" href="#commands">⌘ <span>AI Commands</span></a>
+      <a class="nav-item" href="#settings">⚙ <span>Settings</span></a>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Demo dashboard<br><small>Not connected to WhatsApp</small></div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div><p class="eyebrow">CONTROL CENTER</p><h1>Admin Dashboard</h1></div>
+        <div class="avatar">RA</div>
+      </header>
+      <div class="notice"><b>Demo mode:</b> This is the dashboard interface only. It does not securely authenticate admins or control a live bot yet. Do not enter real API keys here.</div>
+      <section id="overview">
+        <div class="section-heading"><div><h2>Overview</h2><p>Quick snapshot of your bot setup.</p></div><span class="pill">Starter UI</span></div>
+        <div class="stats">
+          <article class="stat-card"><span class="stat-icon">◉</span><p>Bot status</p><h3><span class="status-dot muted"></span> Not connected</h3><small>WhatsApp connection not configured</small></article>
+          <article class="stat-card"><span class="stat-icon">⌘</span><p>AI commands</p><h3 id="enabled-count">6 enabled</h3><small>Demo switches stored in this browser</small></article>
+          <article class="stat-card"><span class="stat-icon">🔐</span><p>Security</p><h3>Setup required</h3><small>Server-side login must be added</small></article>
+        </div>
+      </section>
+      <section id="commands" class="panel">
+        <div class="section-heading"><div><h2>AI Commands</h2><p>Switches below are a visual demo; they do not call AI services yet.</p></div></div>
+        <div id="command-list" class="command-list"></div>
+      </section>
+      <section id="settings" class="panel">
+        <div class="section-heading"><div><h2>Bot Settings</h2><p>Choose the display name and default command prefix.</p></div></div>
+        <form id="settings-form" class="settings-form">
+          <label>Bot display name<input id="bot-name" maxlength="40" value="Rizwan AI Bot"></label>
+          <label>Command prefix<input id="prefix" maxlength="3" value="." required></label>
+          <button class="button" type="submit">Save demo settings</button>
+          <p id="save-message" class="form-message" role="status"></p>
+        </form>
+      </section>
+      <footer>Rizwan AI Bot · Starter Admin UI</footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
